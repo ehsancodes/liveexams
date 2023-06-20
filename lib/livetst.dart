@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'final screen.dart';
 void main() {
   runApp(MyApp(
     appName: 'EhsansApp',
@@ -81,11 +81,17 @@ class _CounterScreenState extends State<CounterScreen> {
                         ),
                         onPressed: () {
                           counter = counter + 1;
-                          setState(() {});
+                          setState(() {
+                            if (counter == 5){
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder:(context) => ProductDetails(counter.toString())),);
+                            }
+                          });
                         },
                         child: Icon(Icons.add),
                       ),
                     ),
+
                     SizedBox(
                       height: 50,
                       width: 10,
